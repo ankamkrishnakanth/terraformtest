@@ -3,7 +3,7 @@ resource "aws_instance" "web-1" {
     count = var.env == "prod" ? 2 : 1
     ami = lookup(var.amis, var.region)
     instance_type = "t2.micro"
-    key_name = aws_key_pair.key.key_name
+    key_name = "krishna"
     subnet_id = element(aws_subnet.public-subnets.*.id, count.index)
     vpc_security_group_ids = ["${aws_security_group.allow_all.id}"]
     associate_public_ip_address = true	
