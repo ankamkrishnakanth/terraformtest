@@ -6,7 +6,7 @@ resource "null_resource" "cluster" {
     connection {
      type = "ssh"
      user = "ubuntu"
-     private_key = file("krishna")
+     private_key = file("krishna.pem")
      timeout = "2m"
      #agent = true
      #host = aws_instance.web-1.*.public_ip
